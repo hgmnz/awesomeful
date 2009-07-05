@@ -17,6 +17,10 @@ body{
 ------------------------------------------------------------- */
 #header { margin-top: 5px; border-bottom: 1px solid #eee; }
 
+#header > #awesomeful-info {
+  float: right;
+}
+
 /* Page
 -------------------------------------------------------------- */
 #page { 
@@ -34,7 +38,9 @@ body{
 #sidebar ul, #sidebar ol { color: #888; }
 #sidebar ul a { color: #555; }
 
-#main{ float: left; width: 710px;  }
+#sidebar > .box { padding: 2px; border: 1px solid #eee; }
+
+#main{ float: left; width: 710px; padding: 5px; }
 
 /* Footer
 -------------------------------------------------------------- */
