@@ -1,8 +1,6 @@
 /* -------------------------------------------------------------- 
-  
    Boilerplate Screen Styles
    * Version:   0.5 (2007-11-19)
-   
 -------------------------------------------------------------- */
 
 @import "lib/reset.css";
@@ -10,35 +8,33 @@
 @import "lib/forms.css";
 @import "lib/plugins/tabs.css";
 
+body{
+  background-image:   url('/images/cafe.jpg');
+  background-repeat:  no-repeat;
+}
+
+/* Header
+------------------------------------------------------------- */
+#header { margin-top: 5px; border-bottom: 1px solid #eee; }
 
 /* Page
 -------------------------------------------------------------- */
-
-#page { margin: 0 auto; width: 950px; }
-
-
-/* Header
--------------------------------------------------------------- */
-
-#header { margin-top: 20px; }
-
-#header .tabs { border-bottom: 1px solid #ddd; }
-#header .tabs li { margin-right: 1px; }
-#header .tabs a { padding: 5px 15px; background: #ddd; color: #666; text-decoration: none; }
-
+#page { 
+  margin:   0 auto; 
+  width:    960px; 
+}
 
 /* Body
 -------------------------------------------------------------- */
 
-#body { margin-top: 20px; }
+#body { margin-top: 10px; }
 
-#introduction { float: left; width: 480px; margin-right: 130px; }
+#sidebar { float: left; width: 230px; }
+#sidebar h3 { color: #888; }
+#sidebar ul, #sidebar ol { color: #888; }
+#sidebar ul a { color: #555; }
 
-#resources { float: left; width: 230px; }
-#resources h3 { color: #888; }
-#resources ul, #resources ol { color: #888; }
-#resources ul a { color: #555; }
-
+#main{ float: left; width: 710px;  }
 
 /* Footer
 -------------------------------------------------------------- */
