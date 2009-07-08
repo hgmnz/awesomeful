@@ -4,8 +4,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Awesomeful</title>
-  <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="stylesheets/print.css" type="text/css" media="print" charset="utf-8">
+  <!--<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/print.css" type="text/css" media="print" charset="utf-8">-->
+  <%= stylesheet_link_tag "screen" %>
+  <%= stylesheet_link_tag "print", :media => 'print' %>
+  <%= stylesheet_link_tag "formtastic", :media => 'screen' %>
+  <%= stylesheet_link_tag "formtastic_changes", :media => 'screen' %>
   <!--[if lte IE 6]><link rel="stylesheet" href="stylesheets/lib/ie.css" type="text/css" media="screen" charset="utf-8"><![endif]-->
 </head>
 <body>
@@ -13,11 +17,15 @@
 <div id="page">
   <div id="header">
     <div id="awesomeful-info">[<em>aw</em>-suh m fuh l]: <span class="quiet">-adjective</span> Full of awesomeness.</div>
-    <h1>Awesomeful</h1>
+    <h1><%= link_to 'Awesomeful', root_path -%></h1>
   </div>
 
   
   <div id="body" class="wrapper">
+
+    <div class="flash_notice">
+      <%= flash[:notice] -%>
+    </div>
 
     <div id="sidebar">
       <div class="box">
@@ -31,21 +39,8 @@
     </div>
 
     <div id="main">
-      <h2>This is a title</h2>
-      <p>bbla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blala bla bla bla</p>
-      <p>bbla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blala bla bla bla</p>
-      <p>bbla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blala bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
-      <p>bla bla bla bla</p>
       <%= yield -%>
     </div>
-
 
   </div>
   
@@ -61,6 +56,8 @@
     <p class="quiet"><small>Creative Commons License</small></p>
   </div>
 </div>
+
+<%= yield :javascript -%>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ Feature: Home Page
   I want to see the latest blog posts on the home page
 
   Scenario: Show latest post
-    Given a post titled 'Foo' and body 'Lorem Ipsum'
+    Given there is a post with title "Foo" and body "Lorem Ipsum"
     When I go to the homepage
     Then I should see "Foo"
     And I should see "Lorem Ipsum"

@@ -15,11 +15,10 @@ body{
 
 /* Header
 ------------------------------------------------------------- */
-#header { margin-top: 5px; border-bottom: 1px solid #eee; }
-
-#header > #awesomeful-info {
-  float: right;
-}
+#header { margin-top: 3px; border-bottom: 1px solid #eee; }
+#header a:link, #header a:visited { color: black; }
+#header h1 { margin-bottom: 0.2em }
+#header > #awesomeful-info { float: right; }
 
 /* Page
 -------------------------------------------------------------- */

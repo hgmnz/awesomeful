@@ -12,8 +12,10 @@
 ActiveRecord::Schema.define(:version => 20090705193608) do
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
+    t.string   "title",            :null => false
     t.text     "body"
+    t.text     "cached_body_html"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

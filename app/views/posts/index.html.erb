@@ -1,2 +1,12 @@
-<h2><%#= @posts.first.title -%></h2>
-<%#= @posts.first.body -%>
+<% unless @posts.empty? -%>
+  <% latest_post = @posts.slice!(0) %>
+  <h2><%= link_to latest_post.title, post_path(latest_post.to_param) -%></h2>
+  <%= latest_post.body -%>
+  <% @posts.each do |p| %>
+    <h2><%= link_to p.title, post_path(p.to_param) -%></h2>
+  <% end %>
+<% else %>
+  <p>
+  There are no posts. Create your first post <%= link_to 'here', new_post_path %>
+  </p>
+<% end %>
