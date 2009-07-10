@@ -1,0 +1,46 @@
+\<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+%html{ :lang => 'en' }
+  %head
+    %title Awesomeful
+    = stylesheet_link_tag "screen"
+    = stylesheet_link_tag "print", :media => 'print'
+    = stylesheet_link_tag "formtastic", :media => 'screen'
+    = stylesheet_link_tag "formtastic_changes", :media => 'screen'
+    <!--[if lte IE 6]><link rel="stylesheet" href="stylesheets/lib/ie.css" type="text/css" media="screen" charset="utf-8"><![endif]-->
+  %body
+
+    #page
+      #header
+        #awesomeful-info [<em>aw</em>-suh m fuh l]: <span class="quiet">-adjective</span> Full of awesomeness.
+        %h1= link_to 'Awesomeful', root_path
+
+    
+      #body.wrapper
+        .flash_notice= flash[:notice]
+
+        #sidebar
+          .box
+            %ul
+              %li= link_to 'Delicious', 'http://delicious.com/hagimenez'
+              %li Music
+              %li Twitter
+              %li Resume
+          = yield :sidebar
+
+        #main
+          = yield
+
+      #footer
+        %ul.tabs
+          %li <a href="#">Lorem</a>
+          %li <a href="#">Lorem</a>
+          %li <a href="#">Ipsum</a>
+          %li <a href="#">Dolor</a>
+          %li <a href="#">Consectetur</a>
+          %li <a href="#">Eiusmod</a>
+        
+        %p.quite
+          %small Creative Commons License
+
+      = yield :javascript 

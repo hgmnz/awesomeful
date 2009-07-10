@@ -1,0 +1,15 @@
+.actions= link_to 'New Post', new_post_path()
+- unless @posts.empty?
+  - latest_post = @posts.slice!(0)
+  %h2= link_to latest_post.title, post_path(latest_post.to_param)
+  = latest_post.body_html
+  - @posts.each do |p|
+    %h2= link_to p.title, post_path(p.to_param)
+- else
+  %p There are no posts. Create your first post #{link_to 'here', new_post_path}
+
+- content_for :sidebar do
+  .box
+    %h2 Admin
+    %ul
+      %li= link_to 'New Post', new_post_path
