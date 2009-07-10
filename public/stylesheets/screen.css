@@ -11,6 +11,7 @@
 body{
   background-image:   url('/images/cafe.jpg');
   background-repeat:  no-repeat;
+  font-size:          90%;
 }
 
 /* Header
@@ -24,7 +25,7 @@ body{
 -------------------------------------------------------------- */
 #page { 
   margin:   0 auto; 
-  width:    960px; 
+  width:    1020px; 
 }
 
 /* Body
@@ -39,7 +40,12 @@ body{
 
 #sidebar > .box { padding: 2px; border: 1px solid #eee; }
 
-#main{ float: left; width: 710px; padding: 5px; }
+#main{ float: left; width: 780px; padding: 5px; }
+#main > h2 > a { color: black }
+
+.actions {
+  float: right;
+}
 
 /* Footer
 -------------------------------------------------------------- */

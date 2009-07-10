@@ -42,7 +42,23 @@ input, select {
   border:           1px solid #888;  
   padding:          1px;  
   background-color: #F8F8F8;  
+  width:            100%;
 }
+
+form.formtastic fieldset ol li.text textarea {
+  width:95%;
+}
+
+form.formtastic fieldset ol li.string input {
+  width:95%;
+}
+
+form.formtastic fieldset ol li {
+  display:  block;
+}
+
+
+
 
 /*input:focus {*/
   /*border-color: #000;*/
