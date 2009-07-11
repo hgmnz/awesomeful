@@ -6,7 +6,7 @@
   /= disqus_comments(post_url(latest_post))
   %hr
   #the-older-stuff
-    %h2 The older stuff
+    %h3 The older stuff
     - @posts.each do |p|
       .post
         .post-title= link_to p.title, post_path(p.to_param)
