@@ -55,3 +55,19 @@ body{
 #footer .tabs a { padding: 10px 30px 10px 0; color: #666; text-decoration: none; }
 
 #footer p.quiet { color: #ccc; }
+
+#footer .col{
+  font-size: 120%;
+  padding:  20px;
+  width:    30%;
+  display:  inline;
+  float:    left;
+}
+
+#footer .columns:after {
+  content:    ".";
+  display:    block;
+  height:     0;
+  clear:      both;
+  /*visibility: hidden;*/
+}
