@@ -5,13 +5,27 @@
 
 @import "lib/reset.css";
 @import "lib/typography.css";
-@import "lib/forms.css";
-@import "lib/plugins/tabs.css";
+
+/* General
+-------------------------------------------------------------- */
 
 body{
   background-image:   url('/images/cafe.jpg');
   background-repeat:  no-repeat;
-  font-size:          95%;
+  font-size:          100%;
+}
+
+hr {
+  background-color:  #eee;
+  border: 0;
+  height: 1px;
+}
+
+a {
+  color:  #000;
+}
+a:hover {
+  color:  #934915;
 }
 
 /* Header
@@ -38,10 +52,45 @@ body{
 #sidebar ul, #sidebar ol { color: #888; }
 #sidebar ul a { color: #555; }
 
-#sidebar > .box { padding: 2px; border: 1px solid #eee; }
+#sidebar > .box { padding: 2px; }
 
 #main{ float: left; width: 780px; padding: 5px; }
 #main > h2 > a { color: black }
+
+#the-older-stuff > .post {
+  margin:         2px;
+  border-bottom:  2px #eee dashed;
+}
+#the-older-stuff > .post > .post-title{
+  font-size:        1.5em;
+  line-height:      2.0;
+  float:            left;
+  clear:            left;
+}
+#the-older-stuff > .post > .post-title a{
+  color:            black;
+  text-decoration:  none;
+}
+
+#the-older-stuff > .post > .post-title a:hover {
+  color:            #934915;
+  text-decoration:  underline;
+}
+#the-older-stuff > .post > .post-date{
+  font-size:    1em;
+  line-height:  2.0;
+  color:        #ccc;
+  clear:        right;
+  float:        right;
+}
+
+.post:after {
+  content:    ".";
+  display:    block;
+  height:     0;
+  clear:      both;
+  visibility: hidden;
+}
 
 .actions {
   float: right;
@@ -49,10 +98,7 @@ body{
 
 /* Footer
 -------------------------------------------------------------- */
-#footer { border-top: 1px solid #eee; margin-top: 20px; }
-
-#footer .tabs { width: 405px; border-top: 3px solid #eee; }
-#footer .tabs a { padding: 10px 30px 10px 0; color: #666; text-decoration: none; }
+#footer { border-top: 5px solid #eee; margin-top: 20px; }
 
 #footer p.quiet { color: #ccc; }
 

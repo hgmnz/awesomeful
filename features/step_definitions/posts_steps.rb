@@ -10,6 +10,8 @@ Then /^I should see "([^\"]*)" under Post Drafts$/ do |title|
   response.should have_tag('div', :class => 'post-drafts') do |page|
     page.should contain(title)
   end
+  # another possibility
+  # have_selector('div.post-drafts', :content => title)
 end
 
 Given /^there is an unpublished post with title "([^\"]*)" and body "([^\"]*)"$/ do |title, body|
