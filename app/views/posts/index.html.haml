@@ -1,9 +1,7 @@
 .actions= link_to 'New Post', new_post_path()
-- unless @posts.empty?
-  - latest_post = @posts.slice!(0)
-  %h2= link_to latest_post.title, post_path(latest_post.to_param)
-  = latest_post.body_html
-  /= disqus_comments(post_url(latest_post))
+- unless (@posts.empty? && @latest_post.nil?)
+  %h2= link_to(@latest_post.title, post_path(@latest_post.to_param))
+  = @latest_post.body_html
   %hr
   #the-older-stuff
     %h3 The older stuff

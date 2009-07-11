@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts       = Post.published
+    @latest_post = @posts.slice!(0)
     @post_drafts = Post.drafts
   end
 
