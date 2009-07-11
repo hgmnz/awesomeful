@@ -13,8 +13,12 @@
   %p There are no posts. Create your first post #{link_to 'here', new_post_path}
 
 - content_for :sidebar do
-  .box
+  .box.admin
     %h3 Admin
     %ul
       %li= link_to 'New Post', new_post_path
+    %h2 Post Drafts
+    %ul
+      - @post_drafts.each do |pd|
+        %li= link_to truncate(pd.title, :limit => 15), edit_post_path(pd)
 

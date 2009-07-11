@@ -5,8 +5,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-    @latest_post = Post.latest
+    @posts       = Post.published
+    @post_drafts = Post.drafts
   end
 
   def show
