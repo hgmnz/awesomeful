@@ -6,28 +6,15 @@
     = stylesheet_link_tag "print", :media => 'print'
     <!--[if lte IE 6]><link rel="stylesheet" href="stylesheets/lib/ie.css" type="text/css" media="screen" charset="utf-8"><![endif]-->
   %body
-
     #page
       #header
         #awesomeful-info [<em>aw</em>-suh m fuh l]: <span class="quiet">-adjective</span> Full of awesomeness.
         %h1= link_to 'Awesomeful', root_path
-    
       #body.wrapper
         .flash_notice= flash[:notice]
-
         #sidebar
-          .box
-            %ul
-              %li= link_to 'Delicious', 'http://delicious.com/hagimenez'
-              %li Music
-              %li Twitter
-              %li Resume
           = yield :sidebar
-
         #main
           = yield
-
       = render :partial => 'shared/footer'
-
-
       = yield :javascript 
