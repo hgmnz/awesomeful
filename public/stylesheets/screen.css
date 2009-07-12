@@ -22,16 +22,18 @@ hr {
 }
 
 a {
-  color:  #000;
+  color:            #000;
+  text-decoration:  underline;
 }
 a:hover {
-  color:  #934915;
+  color:            #934915;
+  text-decoration:  underline;
 }
 
 /* Header
 ------------------------------------------------------------- */
 #header { margin-top: 3px; border-bottom: 1px solid #eee; }
-#header a:link, #header a:visited { color: black; }
+#header a:link, #header a:visited { color: black; text-decoration: none;}
 #header h1 { margin-bottom: 0.2em }
 #header > #awesomeful-info { float: right; }
 
@@ -57,6 +59,7 @@ a:hover {
 #main{ float: left; width: 780px; padding: 5px; }
 #main > h2 > a { color: black }
 
+
 #the-older-stuff > .post {
   margin:         2px;
   border-bottom:  2px #eee dashed;
@@ -69,13 +72,13 @@ a:hover {
 }
 #the-older-stuff > .post > .post-title a{
   color:            black;
-  text-decoration:  none;
 }
 
 #the-older-stuff > .post > .post-title a:hover {
   color:            #934915;
   text-decoration:  underline;
 }
+
 #the-older-stuff > .post > .post-date{
   font-size:    1em;
   line-height:  2.0;
@@ -98,16 +101,29 @@ a:hover {
 
 /* Footer
 -------------------------------------------------------------- */
-#footer { border-top: 5px solid #eee; margin-top: 20px; }
+#footer { 
+  border-top:       10px solid #5e0600;
+  margin-top:       20px; 
+  background-color: #200000;
+  color:            #eee;
+  padding:          10px;
+}
+
 
 #footer p.quiet { color: #ccc; }
 
+#footer a { color: #eee }
+
+#footer .columns {
+  border-bottom:  1px solid #5e0600;
+}
+
 #footer .col{
-  font-size: 120%;
-  padding:  20px;
-  width:    30%;
-  display:  inline;
-  float:    left;
+  font-size:      120%;
+  padding:        20px 30px 0px 30px;
+  width:          30%;
+  float:          left;
+  /*border:   1px #eee solid;*/
 }
 
 #footer .columns:after {

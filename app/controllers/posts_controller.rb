@@ -47,7 +47,6 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Error creating post'
     end
-
   end
 
 end
