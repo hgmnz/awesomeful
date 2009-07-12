@@ -9,6 +9,12 @@
 /* General
 -------------------------------------------------------------- */
 
+/*COLORS:
+http://colorschemedesigner.com/#0m51T6g59w0w0
+Borders and HRs: #948e84
+Titles: #1f1c1a
+ */
+
 body{
   background-image:   url('/images/cafe.jpg');
   background-repeat:  no-repeat;
@@ -16,7 +22,8 @@ body{
 }
 
 hr {
-  background-color:  #eee;
+  /*background-color:  #eee;*/
+  background-color:  #948e84;
   border: 0;
   height: 1px;
 }
@@ -33,7 +40,7 @@ a:hover {
 /* Header
 ------------------------------------------------------------- */
 #header { margin-top: 3px; border-bottom: 1px solid #eee; }
-#header a:link, #header a:visited { color: black; text-decoration: none;}
+#header a:link, #header a:visited { color: #261f20; text-decoration: none;}
 #header h1 { margin-bottom: 0.2em }
 #header > #awesomeful-info { float: right; }
 
@@ -57,12 +64,11 @@ a:hover {
 #sidebar > .box { padding: 2px; }
 
 #main{ float: left; width: 780px; padding: 5px; }
-#main > h2 > a { color: black }
 
 
 #the-older-stuff > .post {
   margin:         2px;
-  border-bottom:  2px #eee dashed;
+  border-bottom:  2px #948e84 dashed;
 }
 #the-older-stuff > .post > .post-title{
   font-size:        1.5em;
@@ -71,7 +77,7 @@ a:hover {
   clear:            left;
 }
 #the-older-stuff > .post > .post-title a{
-  color:            black;
+  color:            #261f20;
 }
 
 #the-older-stuff > .post > .post-title a:hover {
@@ -82,7 +88,7 @@ a:hover {
 #the-older-stuff > .post > .post-date{
   font-size:    1em;
   line-height:  2.0;
-  color:        #ccc;
+  color:        #555;
   clear:        right;
   float:        right;
 }
@@ -102,28 +108,30 @@ a:hover {
 /* Footer
 -------------------------------------------------------------- */
 #footer { 
-  border-top:       10px solid #5e0600;
-  margin-top:       20px; 
-  background-color: #200000;
-  color:            #eee;
-  padding:          10px;
+  /*border-top:       10px solid #5e0600;*/
+  border-top:       10px solid #261F20;
+  margin-top:       20px;
+  background-color: #292421;
+  /*#200000;*/
+  /*color:            #eee;*/
+  color:            #948A84;
+  padding:          10px 10px 0 10px;
 }
 
+/*#footer h4 { color: #7a828d; }*/
+#footer h4 { color: #7f858d; }
 
-#footer p.quiet { color: #ccc; }
+#footer p.quiet { color: #ccc;}
 
 #footer a { color: #eee }
 
-#footer .columns {
-  border-bottom:  1px solid #5e0600;
-}
 
 #footer .col{
   font-size:      120%;
   padding:        20px 30px 0px 30px;
   width:          30%;
   float:          left;
-  /*border:   1px #eee solid;*/
+  /*border-right:   1px #eee solid;*/
 }
 
 #footer .columns:after {
@@ -131,5 +139,5 @@ a:hover {
   display:    block;
   height:     0;
   clear:      both;
-  /*visibility: hidden;*/
+  visibility: hidden;
 }
