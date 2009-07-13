@@ -22,3 +22,6 @@ config.gem "rspec-rails", :lib => 'spec/rails', :version => ">=1.2.6" unless Fil
 config.gem "thoughtbot-factory_girl", 
   :lib => "factory_girl", 
   :source => "http://gems.github.com"
+
+# Clearance host:
+HOST = 'localhost'

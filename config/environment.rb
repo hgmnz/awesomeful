@@ -54,3 +54,6 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+# This constant used by clearance:
+DO_NOT_REPLY = 'i_am_nobody@awesomeful.net'

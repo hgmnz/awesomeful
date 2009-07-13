@@ -11,7 +11,7 @@
         #awesomeful-info [<em>aw</em>-suh m fuh l]: <span class="quiet">-adjective</span> Full of awesomeness.
         %h1= link_to 'Awesomeful', root_path
       #body.wrapper
-        .flash_notice= flash[:notice]
+        = render :partial => 'shared/flashes'
         #sidebar
           = yield :sidebar
         #main
