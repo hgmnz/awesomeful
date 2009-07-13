@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
 
   has_markup :body, :cache_html => true
 
+  attr_accessible :title, :body, :published_at, :published
+
   # This is a virtual boolean attribute to proxy 
   # the published_at datetime.
   def published=(val)
