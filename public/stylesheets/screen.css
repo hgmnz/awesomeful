@@ -9,27 +9,25 @@
 /* General
 -------------------------------------------------------------- */
 
-/*COLORS:
+/*color scheme:
 http://colorschemedesigner.com/#0m51T6g59w0w0
-Borders and HRs: #948e84
-Titles: #1f1c1a
  */
 
 body{
   background-image:   url('/images/cafe.jpg');
   background-repeat:  no-repeat;
-  font-size:          100%;
+  font-size:          90%;
+  color:              #292621;
 }
 
 hr {
-  /*background-color:  #eee;*/
   background-color:  #948e84;
   border: 0;
   height: 1px;
 }
 
 a {
-  color:            #000;
+  color:            #261f20;
   text-decoration:  underline;
 }
 a:hover {
@@ -39,8 +37,8 @@ a:hover {
 
 /* Header
 ------------------------------------------------------------- */
-#header { margin-top: 3px; border-bottom: 1px solid #eee; }
-#header a:link, #header a:visited { color: #261f20; text-decoration: none;}
+#header { margin-top: 3px; border-bottom: 1px solid #948e84; }
+#header a:link, #header a:visited { color: #1f1c1a; text-decoration: none;}
 #header h1 { margin-bottom: 0.2em }
 #header > #awesomeful-info { float: right; }
 
@@ -68,7 +66,7 @@ a:hover {
 
 #the-older-stuff > .post {
   margin:         2px;
-  border-bottom:  2px #948e84 dashed;
+  border-bottom:  1px #948e84 dashed;
 }
 #the-older-stuff > .post > .post-title{
   font-size:        1.5em;
@@ -78,6 +76,7 @@ a:hover {
 }
 #the-older-stuff > .post > .post-title a{
   color:            #261f20;
+  /*color:            #934915;*/
 }
 
 #the-older-stuff > .post > .post-title a:hover {
