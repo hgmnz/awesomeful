@@ -28,6 +28,6 @@ class Post < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{title}".gsub(' ','-')
+    "#{id}-#{title.parameterize}"
   end
 end
