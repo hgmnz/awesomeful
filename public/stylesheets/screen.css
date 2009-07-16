@@ -63,10 +63,28 @@ a:hover {
 
 #main{ float: left; width: 780px; padding: 5px; }
 
+#three-posts > .post {
+  float:    left;
+  padding:  10px;
+  width:    30%;
+}
+#three-posts > .post > .post-title {
+  font-size:        1.5em;
+  line-height:      2.0;
+}
+#three-posts > .post > .post-date {
+  font-size:    0.8em;
+  line-height:  1.0;
+}
+#three-posts > .post > .read-more{
+  font-size:    0.9em;
+}
 #the-older-stuff > .post {
   margin:         2px;
   border-bottom:  1px #948e84 dashed;
 }
+
+
 #the-older-stuff > .post > .post-title{
   font-size:        1.5em;
   line-height:      2.0;
@@ -138,4 +156,28 @@ a:hover {
   height:     0;
   clear:      both;
   visibility: hidden;
+}
+
+/* Clearfix
+-------------------------------------------------------------- */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+/*.clearfix {*/
+  /*display: inline-block;*/
+/*}*/
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }

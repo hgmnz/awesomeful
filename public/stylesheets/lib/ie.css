@@ -17,3 +17,6 @@ legend { margin-bottom: 1.4em; }
 
 /* Fixes incorrect placement of numbers in ol's in IE6/7 */
 ol { margin-left: 2em; }
+
+/* Fix for clearfix'ed floats, trigger the hasLayout property in IE */
+#footer .columns { zoom: 1; }

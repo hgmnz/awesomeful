@@ -11,22 +11,23 @@ class PostsController < ApplicationController
   def index
     @posts       = Post.published
     @latest_post = @posts.slice!(0)
+    @three_posts = @posts.slice!(0..2)
     @post_drafts = Post.drafts
   end
 
-  # GET /posts/:post_id                   HTML
+  # GET /posts/:id                        HTML
   # ------------------------------------------
   def show
     @post = Post.find(params[:id])
   end
 
-  # GET /posts/:post_id/edit              HTML
+  # GET /posts/:id/edit                   HTML
   # ------------------------------------------
   def edit
     @post = Post.find(params[:id])
   end 
 
-  # POST /posts/:post_id                  HTML
+  # POST /posts/:id                       HTML
   # ------------------------------------------
   def update
     @post = Post.find(params[:id])
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # POST  /posts                         HTML
+  # POST  /posts                          HTML
   # ------------------------------------------
   def create
     if Post.create!(params[:post])
