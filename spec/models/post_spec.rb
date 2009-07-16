@@ -1,14 +1,94 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Post do
-  before(:each) do
-    @valid_attributes = {
-      :title => ,
-      :body => "value for body"
-    }
+
+  describe 'Post#published' do
+
+    context 'when published_at is nil' do
+      before(:each) do
+        @post = Factory.build(:post, :published_at => nil)
+      end
+
+      it 'should be false' do
+        @post.published.should be_false
+      end
+    end
+
+    context 'when published_at is a Time' do
+      before(:each) do
+        @post = Factory.build(:post, :published_at => Time.now)
+      end
+
+      it 'should be true' do
+        @post.published.should be_true
+      end
+    end
+
   end
 
-  it "should create a new instance given valid attributes" do
-    Post.create!(@valid_attributes)
+  describe 'Post#published=' do
+    #context 'when the post has a published_at of nil' do
+      #before(:each) do
+        #@post = Factory.build(:post, :published_at => nil)
+      #end
+
+      #context 'and the published value is "1"' do
+        #before(:each) do
+          #@now = Time.now
+          #Time.stub!(:now).and_return(@now)
+          #@post.published = "1"
+        #end
+
+        #it 'should set the published_at to the current time after saving' do
+          #@post.save
+          #@post.published_at.should == @now
+        #end
+      #end
+
+      #context 'and the published value is "0"' do
+        #before(:each) do
+          #@post.published = "0"
+        #end
+
+        #it 'published_at should be nil' do
+          #@post.save
+          #@post.published_at.should be_nil
+        #end
+      #end
+
+    #end
+
+    context "when the post doesn't have a published_at of nil" do
+      before(:each) do
+        @pub_date = Time.now.beginning_of_month.beginning_of_day
+        @post = Factory.create(:post, :published_at => @pub_date)
+      end
+
+      context 'when the published value is "1"' do
+        before(:each) do
+          @post.published = "1"
+        end
+
+        it 'should not change the published_at date' do
+          @post.save
+          @post.published_at.should == @pub_date
+        end
+      end
+
+      context 'when the published value is "0"' do
+        before(:each) do
+          @post.published = "0"
+        end
+
+        it 'should set the published_at to nil' do
+          @post.save
+          @post.published_at.should be_nil
+        end
+      end
+
+    end
+
+    
   end
+
 end

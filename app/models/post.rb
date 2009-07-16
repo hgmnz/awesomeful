@@ -12,15 +12,19 @@ class Post < ActiveRecord::Base
   # This is a virtual boolean attribute to proxy 
   # the published_at datetime.
   def published=(val)
-    if val.to_i == 1
-      self.published_at = Time.now
+    if val.to_i == 1 
+      if !self.published
+        self.published_at = Time.now
+      end
     else
-      self.published_at = nil
+      if self.published
+        self.published_at = nil
+      end
     end
   end
 
   def published
-    !!published_at
+    !!self.published_at
   end
 
   def to_param
