@@ -69,8 +69,9 @@ a:hover {
   width:    30%;
 }
 #three-posts > .post > .post-title {
-  font-size:        1.5em;
-  line-height:      2.0;
+  font-size:        1.3em;
+  line-height:      1.0;
+  padding-bottom:   2px;
 }
 #three-posts > .post > .post-date {
   font-size:    0.8em;
