@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate, :except => [:show, :index]
 
   # GET /posts/new                        HTML
   # ------------------------------------------

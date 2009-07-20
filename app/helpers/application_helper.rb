@@ -10,4 +10,8 @@ module ApplicationHelper
     comments += content_tag(:noscript, link_to('View the discussion thread', 'http://awesomeful.disqus.com/?url=ref'))
   end
 
+
+  def authenticated_only(&block)
+    yield if signed_in?
+  end
 end
