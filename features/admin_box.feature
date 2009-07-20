@@ -9,3 +9,5 @@ Feature: Admin box
     When I go to the homepage
     Then I should see "Admin"
     And I should see "New Post"
+    And I should see "Sign out"
+
