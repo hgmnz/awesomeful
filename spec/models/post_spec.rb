@@ -27,36 +27,6 @@ describe Post do
   end
 
   describe 'Post#published=' do
-    #context 'when the post has a published_at of nil' do
-      #before(:each) do
-        #@post = Factory.build(:post, :published_at => nil)
-      #end
-
-      #context 'and the published value is "1"' do
-        #before(:each) do
-          #@now = Time.now
-          #Time.stub!(:now).and_return(@now)
-          #@post.published = "1"
-        #end
-
-        #it 'should set the published_at to the current time after saving' do
-          #@post.save
-          #@post.published_at.should == @now
-        #end
-      #end
-
-      #context 'and the published value is "0"' do
-        #before(:each) do
-          #@post.published = "0"
-        #end
-
-        #it 'published_at should be nil' do
-          #@post.save
-          #@post.published_at.should be_nil
-        #end
-      #end
-
-    #end
 
     context "when the post doesn't have a published_at of nil" do
       before(:each) do
@@ -87,7 +57,6 @@ describe Post do
       end
 
     end
-
     
   end
 
