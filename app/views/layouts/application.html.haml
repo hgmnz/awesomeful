@@ -15,8 +15,12 @@
         = render :partial => 'shared/flashes'
         #sidebar
           = yield :sidebar
-          = github_badge
-          .tweets
+          .box
+            %h3 I code
+            = github_badge
+          .box
+            %h3 I say things
+            .tweets
         #main
           = yield
     = render :partial => 'shared/footer'
