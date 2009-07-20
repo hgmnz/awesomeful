@@ -8,3 +8,4 @@ Feature: Admin box
     Given I am signed in
     When I go to the homepage
     Then I should see "Admin"
+    And I should see "New Post"

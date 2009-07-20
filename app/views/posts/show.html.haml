@@ -1,4 +1,5 @@
-.actions= link_to "Edit", edit_post_path(@post)
+-authenticated_only do
+  .actions= link_to "Edit", edit_post_path(@post)
 %h2= @post.title
 
 .post-body= find_and_preserve @post.cached_body_html
