@@ -16,7 +16,9 @@
         #sidebar
           = yield :sidebar
           = github_badge
+          .tweets
         #main
           = yield
     = render :partial => 'shared/footer'
-    = yield :javascript 
+    = render :partial => 'shared/javascripts'
+
