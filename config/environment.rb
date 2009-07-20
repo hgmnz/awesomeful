@@ -33,6 +33,8 @@ Rails::Initializer.run do |config|
     :lib     => 'clearance', 
     :source  => 'http://gems.github.com', 
     :version => '0.6.7'
+  config.gem 'coderay',
+    :version => '0.8.312'
   
 
   # Only load the plugins named here, in the order given (default is alphabetical).

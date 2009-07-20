@@ -1,7 +1,7 @@
 .actions= link_to "Edit", edit_post_path(@post)
 %h2= @post.title
 
-.post-body= @post.body_html
+.post-body= find_and_preserve @post.cached_body_html
 
 .post-meta Created #{time_ago_in_words(@post.created_at)} ago.
 

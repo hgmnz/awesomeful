@@ -4,3 +4,4 @@ technicalpickles-has_markup -s http://gems.github.com
 bluecloth
 haml --version 2.2.0
 thoughtbot-clearance --version 0.6.7 -s http://gems.github.com
+coderay 0.8.312

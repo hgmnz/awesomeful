@@ -1,7 +1,7 @@
 .actions= link_to 'New Post', new_post_path()
 - unless (@posts.empty? && @latest_post.nil?)
   %h2= link_to(@latest_post.title, post_path(@latest_post.to_param))
-  = @latest_post.body_html
+  = find_and_preserve @latest_post.cached_body_html
   %hr
 
   #three-posts
@@ -9,7 +9,7 @@
       .post
         .post-title= link_to p.title, post_path(p.to_param)
         .post-date= p.published_at.to_s(:awesomeful)
-        .post-body= truncate(p.body, :length => 300)
+        .post-body= truncate(p.cached_body_html, :length => 300)
         .read-more= link_to 'Read more', post_path(p.to_param)
   .clearfix
 

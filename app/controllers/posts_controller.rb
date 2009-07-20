@@ -36,6 +36,7 @@ class PostsController < ApplicationController
       render :action => 'show'
     else
       flash[:error] = "Something went wrong. Try again. Sorry."
+      render :action => 'edit'
     end
   end
 
