@@ -1,6 +1,6 @@
-- unless (@posts.empty? && @latest_post.nil?)
+-unless (@posts.empty? && @latest_post.nil?)
   %h2= link_to(@latest_post.title, post_path(@latest_post.to_param))
-  = find_and_preserve @latest_post.cached_body_html
+  =find_and_preserve @latest_post.cached_body_html
   %hr
 
   #three-posts
@@ -8,7 +8,7 @@
       .post
         .post-title= link_to p.title, post_path(p.to_param)
         .post-date= p.published_at.to_s(:awesomeful)
-        .post-body= truncate(p.cached_body_html, :length => 300)
+        .post-body= truncate(p.body, :length => 100)
         .read-more= link_to 'Read more', post_path(p.to_param)
   .clearfix
 
@@ -18,20 +18,21 @@
       .post
         .post-title= link_to p.title, post_path(p.to_param)
         .post-date= p.published_at.to_s(:awesomeful)
-- else
+-else
+  %p There are no posts yet.
   -authenticated_only do
-    %p There are no posts. Create your first post #{link_to 'here', new_post_path}
+    %p Create your first post #{link_to 'here', new_post_path}
 
-- content_for :sidebar do
+-content_for :sidebar do
   -authenticated_only do
     .box.admin
       %h3 Admin
       %ul
         %li= link_to 'New Post', new_post_path
         %li= link_to 'Sign out', sign_out_path
+        %li= link_to 'Password', edit_user_path(current_user)
       .post-drafts
         %h3 Post Drafts
         %ul
-          - @post_drafts.each do |pd|
+          -@post_drafts.each do |pd|
             %li= link_to truncate(pd.title, :limit => 15), edit_post_path(pd)
-

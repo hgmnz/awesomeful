@@ -80,6 +80,10 @@ a:hover {
 #three-posts > .post > .read-more{
   font-size:    0.9em;
 }
+#the-older-stuff { 
+  padding-top:  10px; 
+  border-top:   1px #948e84 solid;
+}
 #the-older-stuff > .post {
   margin:         2px;
   border-bottom:  1px #948e84 dashed;

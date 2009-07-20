@@ -15,8 +15,8 @@
         = render :partial => 'shared/flashes'
         #sidebar
           = yield :sidebar
+          = github_badge
         #main
           = yield
     = render :partial => 'shared/footer'
     = yield :javascript 
-

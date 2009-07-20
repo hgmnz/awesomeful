@@ -10,6 +10,13 @@ module ApplicationHelper
     comments += content_tag(:noscript, link_to('View the discussion thread', 'http://awesomeful.disqus.com/?url=ref'))
   end
 
+  def github_badge(user = 'hgimenez')
+    badge = ''
+    badge += content_tag(:div, '', :id => 'github-badge')
+    badge += javascript_tag "var GITHUB_USERNAME='#{user}';"
+    badge += javascript_tag '', :src => "http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js"
+  end
+
   def authenticated_only(&block)
     yield if signed_in?
   end
