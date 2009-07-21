@@ -18,6 +18,8 @@ module NavigationHelpers
       new_session_path
     when /the password reset request page/i
       new_password_path
+    when /the posts atom feed/
+      posts_path :format => :atom
       
     
     # Add more mappings here.

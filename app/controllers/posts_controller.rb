@@ -10,10 +10,17 @@ class PostsController < ApplicationController
   # GET /posts                            HTML
   # ------------------------------------------
   def index
-    @posts       = Post.published
-    @latest_post = @posts.slice!(0)
-    @three_posts = @posts.slice!(0..2)
-    @post_drafts = Post.drafts
+    respond_to do |wants|
+      wants.html {
+        @posts       = Post.published
+        @latest_post = @posts.slice!(0)
+        @three_posts = @posts.slice!(0..2)
+        @post_drafts = Post.drafts
+      }
+      wants.atom {
+        @posts      = Post.published.limited(5)
+      }
+    end
   end
 
   # GET /posts/:id                        HTML
