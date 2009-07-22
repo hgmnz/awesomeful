@@ -18,7 +18,12 @@
           = yield :sidebar
           .box
             %h3 I code
-            = github_badge
+            #github-badge
+            :plain
+              <script type="text/javascript" charset="utf-8">
+                GITHUB_USERNAME="hgimenez";
+              </script>
+              <script src="http://drnicjavascript.rubyforge.org/github_badge/dist/github-badge-launcher.js" type="text/javascript"></script>
           .box
             %h3 I say things
             .tweets
@@ -26,4 +31,6 @@
           = yield
     = render :partial => 'shared/footer'
     = render :partial => 'shared/javascripts'
+    = render :partial => 'shared/google_analytics'
+      
 
