@@ -1,17 +1,12 @@
-/* -------------------------------------------------------------- 
-   Boilerplate Screen Styles
-   * Version:   0.5 (2007-11-19)
--------------------------------------------------------------- */
-
 @import "lib/reset.css";
 @import "lib/typography.css";
 
 /* General
 -------------------------------------------------------------- */
 
-/*color scheme:
-http://colorschemedesigner.com/#0m51T6g59w0w0
- */
+/* color scheme:
+   http://colorschemedesigner.com/#0m51T6g59w0w0
+-------------------------------------------------------------- */
 
 body{
   background-image:   url('/images/cafe.jpg');
@@ -40,7 +35,7 @@ a:hover {
 #header { margin-top: 3px; border-bottom: 1px solid #948e84; }
 #header a:link, #header a:visited { color: #1f1c1a; text-decoration: none;}
 #header h1 { margin-bottom: 0.2em }
-#header > #awesomeful-info { float: right; }
+#header > #awesomeful-info { float: right; font-size: 85%; }
 
 /* Page
 -------------------------------------------------------------- */
@@ -54,14 +49,14 @@ a:hover {
 
 #body { margin-top: 10px; }
 
-#sidebar { float: left; width: 230px; }
-#sidebar h3 { color: #888; }
+#sidebar { float: left; width: 220px; padding-right: 10px }
+#sidebar h3 { color: #888; font-size: 1.3em; border-bottom: 1px solid #ccc; }
 #sidebar ul, #sidebar ol { color: #888; }
 #sidebar ul a { color: #555; }
 
-#sidebar > .box { padding: 2px; }
+#sidebar > .box { padding: 0px 2px 10px 0px;  }
 
-#main{ float: left; width: 780px; padding: 5px; }
+#main{ float: left; width: 780px; padding: 5px; font-size:1.1em}
 
 #three-posts > .post {
   float:    left;
