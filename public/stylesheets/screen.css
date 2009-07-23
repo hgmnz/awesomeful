@@ -145,7 +145,7 @@ a:hover {
 #footer .col{
   font-size:      120%;
   padding:        20px 30px 0px 30px;
-  width:          30%;
+  width:          28%;
   float:          left;
   /*border-right:   1px #eee solid;*/
 }
@@ -184,9 +184,6 @@ html[xmlns] .clearfix {
 
 /* Tweets
 -------------------------------------------------------------- */
-.tweets {
-  color: #085258; 
-}
 .tweets .tweet_list {
   -webkit-border-radius:  .5em;
   list-style-type:        none;
