@@ -7,6 +7,10 @@ class Post < ActiveRecord::Base
 
   has_markup :body, :cache_html => true
 
+  def truncated_body_html(truncate_ops = { :length => 100 })
+    BlueCloth.new(body[0...truncate_ops[:length]]).to_html unless body.blank?
+  end
+
   attr_accessible :title, :body, :published_at, :published
 
   # This is a virtual boolean attribute to proxy 
