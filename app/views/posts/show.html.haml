@@ -1,10 +1,11 @@
 -authenticated_only do
   .actions= link_to "Edit", edit_post_path(@post)
-%h2= @post.title
 
-.post-body= find_and_preserve @post.cached_body_html
+#main-post
+  .post-title
+    %h2= @post.title
+  .post-date Published #{time_ago_in_words(@post.published_at)} ago
+  .post-body= find_and_preserve @post.cached_body_html
 
--if @post.published
-  .post-meta Post published #{time_ago_in_words(@post.published_at)} ago.
 
 = disqus_comments

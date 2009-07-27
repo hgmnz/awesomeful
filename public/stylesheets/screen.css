@@ -58,6 +58,17 @@ a:hover {
 
 #main{ float: left; width: 780px; padding: 5px; font-size:1.1em}
 
+#main-post > .post-title > h2 {
+  font-size:      2em; 
+  margin-bottom:  0.2em; 
+}
+
+#main-post > .post-date {
+  font-size:      0.9em;
+  line-height:    1.0;
+  margin-bottom:  0.5em;
+}
+
 #three-posts > .post {
   float:    left;
   padding:  10px;
