@@ -1,8 +1,10 @@
-== Welcome to Awesomeful.net
+Welcome to Awesomeful.net
+=========================
 
-This is the source for http://awesomeful.net. How awesome.
+This is the source for [awesomeful.net](http://awesomeful.net). How awesome.
 
-== License
+License
+=======
 
 MIT
 
