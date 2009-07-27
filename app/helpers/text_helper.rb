@@ -28,7 +28,7 @@ module HpricotTruncator
       truncated_node = self.dup
       truncated_node.children = []
       each_child do |node|
-        remaining_length = max_length - truncated_node.inner_text.chars.length
+        remaining_length = max_length - truncated_node.inner_text.mb_chars.length
         break if remaining_length == 0
         truncated_node.children << node.truncate(remaining_length)
       end
