@@ -8,7 +8,7 @@
       .post
         .post-title= link_to p.title, post_path(p.to_param)
         .post-date= p.published_at.to_s(:awesomeful)
-        .post-body= p.truncated_body_html(:length => 100)
+        .post-body= truncate_html(p.body_html, 100)
         .read-more= link_to 'Read more', post_path(p.to_param)
   .clearfix
 

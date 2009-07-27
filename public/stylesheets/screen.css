@@ -72,6 +72,9 @@ a:hover {
   font-size:    0.8em;
   line-height:  1.0;
 }
+#three-posts > .post > .post-body > p{
+  margin:       0;
+}
 #three-posts > .post > .read-more{
   font-size:    0.9em;
 }
