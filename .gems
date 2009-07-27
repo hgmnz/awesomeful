@@ -6,5 +6,5 @@ haml --version 2.2.0
 thoughtbot-clearance --version 0.6.7 -s http://gems.github.com
 coderay --version 0.8.312
 rack --version 1.0
-hpricot --version 0.6
+hpricot --version 0.8
 rails --version 2.3.3
