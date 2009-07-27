@@ -34,7 +34,7 @@ a:hover {
 ------------------------------------------------------------- */
 #header { margin-top: 3px; border-bottom: 1px solid #948e84; }
 #header a:link, #header a:visited { color: #1f1c1a; text-decoration: none;}
-#header h1 { margin-bottom: 0.2em }
+#header h1 { margin-bottom: 0.2em; text-shadow: 2px 2px 5px #000; }
 #header > #awesomeful-info { float: right; font-size: 85%; }
 
 /* Page
@@ -138,14 +138,14 @@ a:hover {
 /* Footer
 -------------------------------------------------------------- */
 #footer { 
-  /*border-top:       10px solid #5e0600;*/
   border-top:       10px solid #261F20;
   margin-top:       20px;
   background-color: #292421;
-  /*#200000;*/
-  /*color:            #eee;*/
   color:            #948A84;
-  padding:          10px 10px 0 10px;
+  /*padding:          10px 10px 0 10px;*/
+  float:            left;
+  font-size:        120%;
+  width:            100%;
 }
 
 /*#footer h4 { color: #7a828d; }*/
@@ -155,22 +155,40 @@ a:hover {
 
 #footer a { color: #eee }
 
-
-#footer .col{
-  font-size:      120%;
-  padding:        20px 30px 0px 30px;
-  width:          28%;
-  float:          left;
-  /*border-right:   1px #eee solid;*/
+#footer .first {
+  float:    left;
+  width:    33%;
+  padding:  20px 30px 0px 30px;
 }
 
-#footer .columns:after {
-  content:    ".";
-  display:    block;
-  height:     0;
-  clear:      both;
-  visibility: hidden;
+#footer .second {
+  overflow:   auto;
+  padding:  20px 30px 0px 30px;
 }
+
+* html #footer > .second {
+  float:    left;
+}
+
+* html #footer > .second > .inner {
+  width:    100%;
+}
+
+#footer .third {
+  float:    right;
+  width:    33%;
+  position: relative;
+  padding:  20px 30px 0px 30px;
+}
+
+/*#footer .col{*/
+  /*font-size:      120%;*/
+  /*padding:        20px 30px 0px 30px;*/
+  /*width:          33%;*/
+  /*float:          left;*/
+  /*overflow:       auto;*/
+  /*[>border-right:   1px #eee solid;<]*/
+/*}*/
 
 /* Clearfix
 -------------------------------------------------------------- */
