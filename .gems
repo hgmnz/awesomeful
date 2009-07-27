@@ -1,7 +1,7 @@
-justinfrench-formtastic -s http://gems.github.com
-yfactorial-utility_scopes -s http://gems.github.com
-technicalpickles-has_markup -s http://gems.github.com
-bluecloth
+justinfrench-formtastic -s http://gems.github.com --version 0.2.1
+yfactorial-utility_scopes -s http://gems.github.com --version 0.2.2
+technicalpickles-has_markup -s http://gems.github.com --version 0.1.4
+bluecloth --version 2.0.4
 haml --version 2.2.0
 thoughtbot-clearance --version 0.6.7 -s http://gems.github.com
 coderay --version 0.8.312
