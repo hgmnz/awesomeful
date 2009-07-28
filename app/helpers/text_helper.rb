@@ -10,7 +10,7 @@ module TextHelper
     text.each do |str|
       if options[:length] > 0
         if str =~ /<\/?[^>]*>/
-          previous_tag = str
+          previous_tag = str.gsub('-', '\-')
           result << str
         else
           result << str
