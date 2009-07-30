@@ -1,29 +1,66 @@
 # http://gist.github.com/97425
 module TextHelper
+
   def truncate_html(html, options={})
-    previous_tag = ""
-    text, result = [], []
+    options[:length] ||= 100
+    options[:omission] ||= '...'
+    chars_remaining = options[:length]
+    open_tags, result = [], []
 
-    # get all text (including punctuation) and tags and stick them in a hash
-    html.scan(/<\/?[^>]*>|[A-Za-z.,;!"'?]+/).each { |t| text << t }
-
-    text.each do |str|
-      if options[:length] > 0
-        if str =~ /<\/?[^>]*>/
-          previous_tag = str.gsub('-', '\-')
-          result << str
+    html_tokens(html).each do |str|
+      if chars_remaining > 0
+        if html_tag?(str)
+          if open_tag?(str)
+            open_tags << str 
+          else
+            open_tags = remove_latest_open_tag(open_tags, str)
+          end
         else
-          result << str
-          options[:length] -= str.length
+          chars_remaining -= (str.length + 1)
         end
+        result << str
       else
-        # now stick the next tag with a </> that matches the previous open tag on the end of the result
-        if str =~ /<\/([#{previous_tag}]*)>/
-          result << str
-        else
+        result << options[:omission] unless options[:omission].nil?
+        open_tags.reverse.each do |open_tag|
+          result << matching_close_tag(open_tag)
         end
+        break
       end
     end
-    return result.join(" ") + options[:omission].to_s
+    return result.join(" ")
   end
+
+  private
+
+  def html_tokens(html)
+    text = []
+    html.scan(/<\/?[^>]*>|[A-Za-z.,;!"'?]+/).each { |t| text << t }
+  end
+
+  def html_tag?(string)
+    if string =~ /<\/?[^>]*>/ then true else false end
+  end
+
+  def open_tag?(html_tag)
+    if html_tag =~ /<[\w\s='"]+>/ then true else false end
+  end
+
+  def matching_close_tag(open_tag)
+    open_tag.gsub(/<(\w+)\s?.*>/, '</\1>').strip
+  end
+
+  def remove_latest_open_tag(open_tags, close_tag)
+    (0...open_tags.length).to_a.reverse.each do |i|
+      if matching_close_tag(open_tags[i]) == close_tag
+        return open_tags[0...i] + open_tags[(i+1)...open_tags.length]
+      end
+    end
+    return open_tags
+  end
+
+  def escape_special_chars(string)
+    string.gsub(/([\^\$\.\|\?\*\+\-])/, '\\\\\1')
+  end
+
+
 end
