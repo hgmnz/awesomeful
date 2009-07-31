@@ -66,7 +66,7 @@ module TextHelper
       result << t
       result << ' ' unless html_tag?(t)
     end
-    result.gsub(/(.+?)\s+(<\/?[^>]*>)/, '\1\2')
+    result.gsub(/([\w`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)\s+(<\/[^>]*>)/, '\1\2')
   end
 
 
