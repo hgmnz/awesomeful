@@ -1,4 +1,3 @@
-# http://gist.github.com/97425
 module TextHelper
 
   def truncate_html(html, options={})
@@ -20,21 +19,20 @@ module TextHelper
         end
         result << str
       else
-        result << options[:omission] unless options[:omission].nil?
+        result[-1] += options[:omission] unless options[:omission].nil?
         open_tags.reverse.each do |open_tag|
           result << matching_close_tag(open_tag)
         end
         break
       end
     end
-    return result.join(" ")
+    construct_html_from_truncated_tokens(result)
   end
 
   private
 
   def html_tokens(html)
-    text = []
-    html.scan(/<\/?[^>]*>|[A-Za-z.,;!"'?]+/).each { |t| text << t }
+    html.scan(/<\/?[^>]*>|[A-Za-z@#\$%\^&\*\(\)\-_=\+.,:;!"'?]+/)
   end
 
   def html_tag?(string)
@@ -60,6 +58,15 @@ module TextHelper
 
   def escape_special_chars(string)
     string.gsub(/([\^\$\.\|\?\*\+\-])/, '\\\\\1')
+  end
+
+  def construct_html_from_truncated_tokens(tokens)
+    result = ''
+    tokens.each do |t|
+      result << t
+      result << ' ' unless html_tag?(t)
+    end
+    result
   end
 
 

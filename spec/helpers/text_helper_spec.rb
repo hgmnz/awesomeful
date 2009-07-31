@@ -15,7 +15,7 @@ describe TextHelper do
     end
 
     it 'should truncate, and close the <a>, <li> and <ul> tags' do
-      truncate_html(@html, :length => 5).should == '<ul> <li> <a href="foo"> I\'m a ... </a> </li> </ul>'
+      truncate_html(@html, :length => 5).should == '<ul><li><a href="foo">I\'m a... </a></li></ul>'
     end
   end
 
@@ -23,12 +23,12 @@ describe TextHelper do
     before(:each) do
       @html = <<-END_HTML
         <h1>Hi there</h1>
-        <p>This is sweet</p>
+        <p>This is sweet!</p>
       END_HTML
     end
 
     it 'should return each token in the string as an array element' do
-      html_tokens(@html).should == ['<h1>', 'Hi', 'there','</h1>','<p>','This','is','sweet','</p>']
+      html_tokens(@html).should == ['<h1>', 'Hi', 'there','</h1>','<p>','This','is','sweet!','</p>']
     end
   end
 
