@@ -1,4 +1,4 @@
-module TextHelper
+module TruncateHtmlHelper
 
   def truncate_html(html, options={})
     options[:length] ||= 100
@@ -68,6 +68,9 @@ module TextHelper
     ).gsub(
       #remove whitespace between closing tag and punctuation
       /(<\/[^>]*>)\s+([`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)/, '\1\2'
+    ).gsub(
+      #remove whitespace between open tag and word chars.
+      /(<[^>]*>)\s+([`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)/, '\1\2'
     )
   end
 

@@ -1,12 +1,8 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-include TextHelper
+require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
-describe TextHelper do
-  
-  it "should be included in the object returned by #helper" do
-    included_modules = (class << helper; self; end).send :included_modules
-    included_modules.should include(TextHelper)
-  end
+include TruncateHtmlHelper
+
+describe TruncateHtmlHelper do
 
   describe '#truncate_html' do
 
@@ -15,7 +11,7 @@ describe TextHelper do
     end
 
     it 'should truncate, and close the <a>, <li> and <ul> tags' do
-      truncate_html(@html, :length => 5).should == '<ul><li><a href="foo">I\'m a...</a></li></ul>'
+      truncate_html(@html, :length => 5).should == '<ul> <li> <a href="foo"> I\'m a...</a> </li> </ul>'
     end
   end
 
