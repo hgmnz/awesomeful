@@ -61,12 +61,14 @@ module TextHelper
   end
 
   def construct_html_from_truncated_tokens(tokens)
-    result = ''
-    tokens.each do |t|
-      result << t
-      result << ' ' unless html_tag?(t)
-    end
-    result.gsub(/([\w`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)\s+(<\/[^>]*>)/, '\1\2')
+    result=tokens.join(' ')
+    result.gsub(
+      #remove whitespace between word and closing html tag
+      /([\w`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)\s+(<\/[^>]*>)/, '\1\2'
+    ).gsub(
+      #remove whitespace between closing tag and punctuation
+      /(<\/[^>]*>)\s+([`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+?)/, '\1\2'
+    )
   end
 
 
