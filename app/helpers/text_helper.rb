@@ -32,7 +32,7 @@ module TextHelper
   private
 
   def html_tokens(html)
-    html.scan(/<\/?[^>]*>|[A-Za-z@#\$%\^&\*\(\)\-_=\+.,:;!"'?]+/)
+    html.scan /<\/?[^>]*>|[\w`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'",\.\/?]+/
   end
 
   def html_tag?(string)
@@ -66,7 +66,7 @@ module TextHelper
       result << t
       result << ' ' unless html_tag?(t)
     end
-    result
+    result.gsub(/(.+?)\s+(<\/?[^>]*>)/, '\1\2')
   end
 
 

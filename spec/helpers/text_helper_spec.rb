@@ -15,7 +15,7 @@ describe TextHelper do
     end
 
     it 'should truncate, and close the <a>, <li> and <ul> tags' do
-      truncate_html(@html, :length => 5).should == '<ul><li><a href="foo">I\'m a... </a></li></ul>'
+      truncate_html(@html, :length => 5).should == '<ul><li><a href="foo">I\'m a...</a></li></ul>'
     end
   end
 
