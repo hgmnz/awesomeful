@@ -20,4 +20,10 @@ module ApplicationHelper
   def authenticated_only(&block)
     yield if signed_in?
   end
+
+
+  def title(page_title)
+    content_for(:title) { page_title  + ' | Awesomeful'}
+  end
+  
 end
