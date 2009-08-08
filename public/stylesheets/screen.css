@@ -69,11 +69,18 @@ a:hover {
   margin-bottom:  0.5em;
 }
 
+#main-post > .tags {
+  font-size:      0.9em;
+  line-height:    1.0;
+  margin-bottom:  0.5em;
+}
+
 #three-posts > .post {
   float:    left;
   padding:  10px;
   width:    30%;
 }
+
 #three-posts > .post > .post-title {
   font-size:        1.3em;
   line-height:      1.0;

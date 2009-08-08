@@ -1,13 +1,18 @@
 class Post < ActiveRecord::Base
 
+
   default_scope :order => 'published_at desc, created_at desc'
   named_scope :latest,    :limit => 1, :order => 'published_at desc'
   named_scope :published, :conditions => 'published_at is not null'
   named_scope :drafts,    :conditions => 'published_at is null'
 
+  acts_as_taggable_on :tags
+
   has_markup :body, :cache_html => true
 
-  attr_accessible :title, :body, :published_at, :published
+  attr_accessible :title, :body, :tag_list, :published_at, :published
+
+
 
   # This is a virtual boolean attribute to proxy 
   # the published_at datetime.
