@@ -144,7 +144,7 @@ a:hover {
   color:            #948A84;
   /*padding:          10px 10px 0 10px;*/
   float:            left;
-  font-size:        120%;
+  font-size:        90%;
   width:            100%;
 }
 
@@ -163,7 +163,7 @@ a:hover {
 
 #footer .second {
   overflow:   auto;
-  padding:  20px 30px 0px 30px;
+  padding:  20px 0px 0px 0px;
 }
 
 * html #footer > .second {
@@ -181,14 +181,9 @@ a:hover {
   padding:  20px 30px 0px 30px;
 }
 
-/*#footer .col{*/
-  /*font-size:      120%;*/
-  /*padding:        20px 30px 0px 30px;*/
-  /*width:          33%;*/
-  /*float:          left;*/
-  /*overflow:       auto;*/
-  /*[>border-right:   1px #eee solid;<]*/
-/*}*/
+#copyleft {
+  padding:  30px
+}
 
 /* Clearfix
 -------------------------------------------------------------- */
