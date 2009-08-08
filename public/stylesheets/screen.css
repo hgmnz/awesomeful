@@ -238,3 +238,24 @@ html[xmlns] .clearfix {
 .tweets .tweet_list .tweet_avatar img {
   vertical-align: middle; 
 }
+
+/* Image shadows
+ * http://www.alistapart.com/articles/cssdropshadows/
+-------------------------------------------------------------- */
+.img-shadow {
+  float:      left;
+  background: url(/images/image_shadow.png) no-repeat bottom right !important;
+  background: url(/images/shadow.gif) no-repeat bottom right;
+  margin:     10px 0 0 10px !important;
+  margin:     10px 0 0 5px;
+}
+
+.img-shadow img {
+  display:          block;
+  position:         relative;
+  background-color: #fff;
+  border:           1px solid #a9a9a9;
+  margin:           -6px 6px 6px -6px;
+  padding:          4px;
+}
+

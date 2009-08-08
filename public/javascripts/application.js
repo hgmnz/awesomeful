@@ -12,5 +12,13 @@ $(document).ready(function(){
         join_text: false,
         loading_text: "loading tweets..."
     });
+
+    apply_img_shadows();
+    
 });
+
+function apply_img_shadows(){
+ $(".post-body img").wrap("<div class='img-shadow'></div>");
+ $(".img-shadow").after("<div class='clearfix'></div>");
+}
 
