@@ -41,7 +41,7 @@ a:hover {
 -------------------------------------------------------------- */
 #page { 
   margin:   0 auto; 
-  width:    1020px; 
+  width:    960px; 
 }
 
 /* Body
@@ -49,14 +49,14 @@ a:hover {
 
 #body { margin-top: 10px; }
 
-#sidebar { float: left; width: 220px; padding-right: 10px }
+#sidebar { float: left; width: 200px; padding-right: 10px }
 #sidebar h3 { color: #888; font-size: 1.3em; border-bottom: 1px solid #ccc; }
 #sidebar ul, #sidebar ol { color: #888; }
 #sidebar ul a { color: #555; }
 
 #sidebar > .box { padding: 0px 2px 10px 0px;  }
 
-#main{ float: left; width: 780px; padding: 5px; font-size:1.1em}
+#main{ float: left; width: 740px; padding: 5px; font-size:1.1em}
 
 #main-post > .post-title > h2 {
   font-size:      2em; 
