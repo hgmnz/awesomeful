@@ -1,4 +1,4 @@
-Feature: Manage posts
+Feature Manage posts
 
   So that I can share awesome things online
   As the site owner
@@ -10,12 +10,16 @@ Feature: Manage posts
     When I go to the new post page
     And I fill in "title" with "Foo"
     And I fill in "body" with "Lorem Ipsum"
+    And I fill in "Tag List" with "Foo, Bar, Baz"
     And I check "Published"
     And I press "Create Post"
     Then I should see "Post created successfully"
     And I should see "Foo"
     And I should see "Lorem Ipsum"
     And I should see "Bar"
+    And I should see "Foo" under the "tags" class
+    And I should see "Bar" under the "tags" class
+    And I should see "Baz" under the "tags" class
 
   Scenario: Sign in, create a blog post, but don't publish it yet
     Given I am signed in
@@ -26,7 +30,7 @@ Feature: Manage posts
     And I press "Create Post"
     Then I should see "Post created successfully"
     And I should see "Yey"
-    And I should see "Foo" under Post Drafts
+    And I should see "Foo" under the "post-drafts" class
 
   Scenario: Sign in and publish an unpublished posts
     Given I am signed in
