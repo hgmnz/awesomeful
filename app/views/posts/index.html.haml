@@ -50,7 +50,7 @@
     });
 
     function fetch_posts_by_tag(tag){
-      $('.older-posts').load('/posts/tags/' + tag, null, function(responseText, textStatus, XMLHttpRequest){
+      $('.older-posts').load('/posts/tags/' + escape(tag), null, function(responseText, textStatus, XMLHttpRequest){
           $('.older-posts').show('highlight', 'slow');
         });
 
