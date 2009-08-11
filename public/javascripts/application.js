@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $(".tweets").tweet({
         username: "hgimenez",
-        join_text: "auto",
         avatar_size: 32,
         count: 4,
         //auto_join_text_default: "",
