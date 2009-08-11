@@ -96,6 +96,22 @@ a:hover {
 #three-posts > .post > .read-more{
   font-size:    0.9em;
 }
+
+.tag a{
+  padding:          3px;
+  margin:           5px;
+  text-decoration:  none;
+  /*border:       1px solid #948e84;*/
+}
+
+.tag a:hover {
+  padding:          2px;
+  margin:           5px;
+  background-color: #948e84;
+  border:           1px #261f20 solid;
+  color:            #FFF;
+}
+
 #the-older-stuff { 
   padding-top:  10px; 
   border-top:   1px #948e84 solid;
@@ -155,7 +171,6 @@ a:hover {
   width:            100%;
 }
 
-/*#footer h4 { color: #7a828d; }*/
 #footer h4 { color: #7f858d; }
 
 #footer p.quiet { color: #ccc;}
