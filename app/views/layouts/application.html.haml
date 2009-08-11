@@ -16,10 +16,10 @@
       #body.wrapper
         = render :partial => 'shared/flashes'
         #sidebar
-          = yield :sidebar
           .box
             %h3 I say things
             .tweets
+          = yield :sidebar
         #main
           = yield
     = render :partial => 'shared/footer'
