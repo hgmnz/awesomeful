@@ -4,7 +4,7 @@
       %h2= link_to(@latest_post.title, post_path(@latest_post.to_param))
     .post-date Published #{time_ago_in_words(@latest_post.published_at)} ago
     .post-body= find_and_preserve @latest_post.cached_body_html
-    .tags Tagged as: #{@latest_post.tag_list.join(', ')}
+    .tags Tagged as: #{@latest_post.post_tag_list.join(', ')}
   %hr
 
   #three-posts
@@ -18,10 +18,9 @@
 
   #the-older-stuff
     %h3 The older stuff
-    - @posts.each do |p|
-      .post
-        .post-title= link_to p.title, post_path(p.to_param)
-        .post-date= p.published_at.to_s(:awesomeful)
+    = render :partial => 'tags'
+    .older-posts
+      = render :partial => 'post_list', :locals => { :posts => @posts }
 -else
   %p There are no posts yet.
   -authenticated_only do
@@ -40,3 +39,20 @@
         %ul
           -@post_drafts.each do |pd|
             %li= link_to truncate(pd.title, :limit => 15), edit_post_path(pd)
+
+-content_for :javascripts do
+  :javascript
+    $(document).ready(function(){
+      $('.tag').click(function(event){
+        $('.older-posts').hide('blind', null, 'fast', fetch_posts_by_tag($(event.target).text()));
+        return false;
+      });
+    });
+
+    function fetch_posts_by_tag(tag){
+      $('.older-posts').load('/posts/tags/' + tag, null, function(responseText, textStatus, XMLHttpRequest){
+          $('.older-posts').show('highlight', 'slow');
+        });
+
+    }
+

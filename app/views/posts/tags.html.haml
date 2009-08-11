@@ -1,0 +1,7 @@
+-title "Posts by tag \"#{@tags.join(', ')}\""
+#h2 Posts tagged "#{@tags.join(', ')}"
+#the-older-stuff
+  = render :partial => 'tags'
+  .older-posts
+    = render :partial => 'post_list', :locals => { :posts => @posts }
+

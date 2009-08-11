@@ -100,29 +100,29 @@ a:hover {
   padding-top:  10px; 
   border-top:   1px #948e84 solid;
 }
-#the-older-stuff > .post {
+#the-older-stuff .post {
   margin:         2px;
   border-bottom:  1px #948e84 dashed;
 }
 
 
-#the-older-stuff > .post > .post-title{
+#the-older-stuff .post > .post-title{
   font-size:        1.5em;
   line-height:      2.0;
   float:            left;
   clear:            left;
 }
-#the-older-stuff > .post > .post-title a{
+#the-older-stuff .post > .post-title a{
   color:            #261f20;
   /*color:            #934915;*/
 }
 
-#the-older-stuff > .post > .post-title a:hover {
+#the-older-stuff .post > .post-title a:hover {
   color:            #934915;
   text-decoration:  underline;
 }
 
-#the-older-stuff > .post > .post-date{
+#the-older-stuff .post > .post-date{
   font-size:    1em;
   line-height:  2.0;
   color:        #555;

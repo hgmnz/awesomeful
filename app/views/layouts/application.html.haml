@@ -2,7 +2,7 @@
 %html{ :lang => 'en', :xmlns => 'http://www.w3.org/1999/xhtml' }
   %head
     %title 
-      = yield :title || 'Awesomeful'
+      = (yield :title) || 'Awesomeful'
     = stylesheet_link_tag     'screen', 'formtastic', 'formtastic_changes', :media => 'screen'
     = stylesheet_link_tag     "print", :media => 'print'
     = stylesheet_link_tag     "coderay", :media => 'all'
@@ -27,5 +27,3 @@
           = yield
     = render :partial => 'shared/footer'
     = render :partial => 'shared/javascripts'
-      
-

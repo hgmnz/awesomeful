@@ -6,11 +6,11 @@ class Post < ActiveRecord::Base
   named_scope :published, :conditions => 'published_at is not null'
   named_scope :drafts,    :conditions => 'published_at is null'
 
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :post_tags
 
   has_markup :body, :cache_html => true
 
-  attr_accessible :title, :body, :tag_list, :published_at, :published
+  attr_accessible :title, :body, :post_tag_list, :published_at, :published
 
 
 
