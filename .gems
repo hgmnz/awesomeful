@@ -8,5 +8,5 @@ coderay --version 0.8.312
 rack --version 1.0
 hpricot --version 0.8
 rails --version 2.3.3
-mbleigh-acts-as-taggable-on  --version 1.0.5
+mbleigh-acts-as-taggable-on  --version 1.0.5 -s http://gems.github.com
 
