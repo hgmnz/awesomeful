@@ -71,9 +71,7 @@ class PostsController < ApplicationController
       @tags << t
     end
     respond_to do |wants|
-      wants.js do
-        render :partial => 'post_list', :locals => { :posts => @posts }
-      end
+      wants.js
       wants.html
     end
   end

@@ -44,15 +44,11 @@
   :javascript
     $(document).ready(function(){
       $('.tag').click(function(event){
-        $('.older-posts').hide('blind', null, 'fast', fetch_posts_by_tag($(event.target).text()));
+        $('.older-posts').hide('blind', null, 'fast', $.get('/posts/tags/' + escape($(event.target).text()), null, null, 'script'));
         return false;
       });
     });
 
-    function fetch_posts_by_tag(tag){
-      $('.older-posts').load('/posts/tags/' + escape(tag), null, function(responseText, textStatus, XMLHttpRequest){
-          $('.older-posts').show('highlight', 'slow');
-        });
+    function load_posts_by_tag(tag){
 
     }
-

@@ -1,0 +1,3 @@
+console.log('here');
+$('.older-posts').html('#{escape_javascript(render :partial => 'post_list', :locals => { :posts => @posts } )}');
+$('.older-posts').show('highlight', 'slow');
