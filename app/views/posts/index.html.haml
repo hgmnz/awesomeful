@@ -44,7 +44,6 @@
   :javascript
     $(document).ready(function(){
       $('.tag').click(function(event){
-        $('html,body').animate({scrollTop: $('#the-older-stuff').offset().top}, 1000 );
         $('.older-posts').hide('blind', null, 'fast', $.get('/posts/tags/' + escape($(event.target).text()), null, null, 'script'));
         return false;
       });
