@@ -64,7 +64,7 @@ class PostsController < ApplicationController
   # -------------------------------------------
   def tags
     render :action => 'index' unless params[:tags]
-    @posts = Post.tagged_with(params[:tags], :on => 'post_tags')
+    @posts = Post.tagged_with(params[:tags], :on => 'post_tags').published
     @tag_counts = Post.post_tag_counts
     @tags = []
     params[:tags].each do |t|
