@@ -10,7 +10,7 @@ Feature Manage posts
     When I go to the new post page
     And I fill in "title" with "Foo"
     And I fill in "body" with "Lorem Ipsum"
-    And I fill in "Tag List" with "Foo, Bar, Baz"
+    And I fill in "Post Tag List" with "Foo, Bar, Baz"
     And I check "Published"
     And I press "Create Post"
     Then I should see "Post created successfully"

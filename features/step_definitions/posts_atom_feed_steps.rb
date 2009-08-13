@@ -15,6 +15,7 @@ Then /^I should see a post entry for:$/ do |posts_table|
     response.should have_tag('feed > entry') do 
       with_tag 'title', :text => hash[:title]
       with_tag 'content', :text => h(RedCloth.new(hash[:body]).to_html)
+      with_tag 'published', :text => Time.parse(hash[:published_at]).xmlschema
     end
   end
 end
