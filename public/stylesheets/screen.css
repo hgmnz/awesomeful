@@ -58,6 +58,7 @@ a:hover {
 
 #main{ float: left; width: 740px; padding: 5px; font-size:1.1em}
 
+
 #main-post > .post-title > h2 {
   font-size:      2em; 
   margin-bottom:  0.2em; 
@@ -74,6 +75,8 @@ a:hover {
   line-height:    1.0;
   margin-bottom:  0.5em;
 }
+
+#main-post, #three-posts { border-bottom: 1px #948e84 solid; }
 
 #three-posts > .post {
   float:    left;
@@ -93,9 +96,6 @@ a:hover {
 #three-posts > .post > .post-body > p{
   margin:       0;
 }
-#three-posts > .post > .read-more{
-  font-size:    0.9em;
-}
 
 .tag a{
   padding:          3px;
@@ -114,7 +114,6 @@ a:hover {
 
 #the-older-stuff { 
   padding-top:  10px; 
-  border-top:   1px #948e84 solid;
 }
 #the-older-stuff .post {
   margin:         2px;

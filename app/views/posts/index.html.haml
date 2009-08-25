@@ -5,7 +5,6 @@
     .post-date Published #{time_ago_in_words(@latest_post.published_at)} ago
     .post-body= find_and_preserve @latest_post.cached_body_html
     .tags Tagged as: #{@latest_post.post_tag_list.join(', ')}
-  %hr
 
   #three-posts
     - @three_posts.each do |p|
@@ -13,8 +12,7 @@
         .post-title= link_to p.title, post_path(p.to_param)
         .post-date= p.published_at.to_s(:awesomeful)
         .post-body= truncate_html(p.cached_body_html, :length => 100, :omission => '...')
-        .read-more= link_to 'Read more', post_path(p.to_param)
-  .clearfix
+    .clearfix
 
   #the-older-stuff
     %h3 The older stuff
@@ -44,6 +42,7 @@
   :javascript
     $(document).ready(function(){
       $('.tag').click(function(event){
+        $('#main-post, #three-posts').hide('blind', 'slow', function() { $('#main-post, #three-posts').remove() })
         $('.older-posts').hide('blind', null, 'fast', $.get('/posts/tags/' + escape($(event.target).text()), null, null, 'script'));
         return false;
       });
