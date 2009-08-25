@@ -2,9 +2,9 @@ class Post < ActiveRecord::Base
 
 
   default_scope :order => 'published_at desc, created_at desc'
-  named_scope :latest,    :limit => 1, :order => 'published_at desc'
-  named_scope :published, :conditions => 'published_at is not null'
-  named_scope :drafts,    :conditions => 'published_at is null'
+  named_scope   :latest,    :limit      => 1, :order => 'published_at desc'
+  named_scope   :published, :conditions => 'published_at is not null'
+  named_scope   :drafts,    :conditions => 'published_at is null'
 
   acts_as_taggable_on :post_tags
 
