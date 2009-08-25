@@ -38,6 +38,8 @@ Rails::Initializer.run do |config|
   config.gem 'mbleigh-acts-as-taggable-on', 
     :source => 'http://gems.github.com', 
     :lib    => 'acts-as-taggable-on'
+  config.gem 'truncate_html',
+    :source => 'http://gemcutter.org'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
