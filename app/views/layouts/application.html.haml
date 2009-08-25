@@ -4,8 +4,8 @@
     %title 
       = (yield :title) || 'Awesomeful'
     = stylesheet_link_tag     'screen', 'formtastic', 'formtastic_changes', :media => 'screen'
-    = stylesheet_link_tag     "print", :media => 'print'
-    = stylesheet_link_tag     "coderay", :media => 'all'
+    = stylesheet_link_tag     'print', :media => 'print'
+    = stylesheet_link_tag     'coderay', :media => 'all'
     = auto_discovery_link_tag :atom, posts_path(:format => :atom)
     <!--[if lte IE 6]><link rel="stylesheet" href="stylesheets/lib/ie.css" type="text/css" media="screen" charset="utf-8"><![endif]-->
   %body
