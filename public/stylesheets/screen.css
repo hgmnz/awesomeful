@@ -116,13 +116,16 @@ a:hover {
   padding-top:  10px; 
 }
 #the-older-stuff .post {
-  margin:         2px;
-  border-bottom:  1px #948e84 dashed;
+  padding:         5px;
+}
+
+#the-older-stuff .odd {
+  background-color: #eee;
 }
 
 
 #the-older-stuff .post > .post-title{
-  font-size:        1.5em;
+  font-size:        1.2em;
   line-height:      2.0;
   float:            left;
   clear:            left;

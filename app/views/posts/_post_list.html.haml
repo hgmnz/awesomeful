@@ -1,4 +1,4 @@
 - posts.each do |p|
-  .post
+  .post{:class => cycle('even', 'odd')}
     .post-title= link_to p.title, post_path(p.to_param)
     .post-date= p.published_at.to_s(:awesomeful)
