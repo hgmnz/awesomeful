@@ -19,7 +19,11 @@ class PostsController < ApplicationController
         @post_drafts = Post.drafts
       }
       wants.atom {
-        @posts      = Post.published.limited(5)
+        if request.referrer =~ /feedburner/
+        redirect_to 'http://feeds.feedburner.com/awesomeful'
+        else
+          @posts    = Post.published.limited(5)
+        end
       }
     end
   end

@@ -20,6 +20,17 @@
           .box
             %h3 I say things
             .tweets
+            :plain
+              <script type="text/javascript" src="http://api.postrank.com/static/widget-v2.js"></script>
+              <script type="text/javascript">
+              var options = {
+                "feed_hash": "2560effbca26b5205d8af6b3ebc31e1e",
+                "num":        5 ,
+                "theme":     "diy" 
+              };
+              new PostRankWidget(options);
+              </script>
+          
         #main
           = yield
     = render :partial => 'shared/footer'
