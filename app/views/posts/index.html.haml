@@ -36,7 +36,7 @@
         %h3 Post Drafts
         %ul
           -@post_drafts.each do |pd|
-            %li= link_to truncate(pd, :limit => 15), edit_post_path(pd)
+            %li= link_to truncate(pd.title, :limit => 15), edit_post_path(pd)
 
 -content_for :javascripts do
   :javascript
